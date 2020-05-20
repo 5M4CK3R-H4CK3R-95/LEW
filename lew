@@ -9,6 +9,58 @@ if not os.path.exists('data'):
 	os.system('mkdir data')
 if not os.path.exists('data/data.txt'):
 	os.system('touch data/data.txt')
+if os.path.exists('/data/data/com.termux/files/home'):
+	version = 'android'
+else:
+	version = 'pc'
+	
+def install_metasploit():
+	try:
+		print('')
+		print('Do You Wont to install metasploit [y/n] ???')
+		print('')
+		chuse = input(' <--> ')
+		if chuse == 'y' or chuse == 'Y':
+			print('Please Wait Installing Metasploit It Could take about 1 hour so be patint')
+			print('')
+			os.system('clear')
+			os.chdir('/data/data/com.termux/files/home')
+			os.system('apt install curl -y')
+			os.system('clear')
+			os.system('apt install clang -y')
+			os.system('apt install ruby -y')
+			os.system('clear')
+			os.system('curl -LO https://github.com/termux/termux-packages/files/3995119/metasploit_5.0.65-1_all.deb.gz')
+			os.system('apt install gunzip -y')
+			os.system('clear')
+			os.system('gunzip metasploit_5.0.65-1_all.deb.gz')
+			os.system('dpkg -i metasploit_5.0.65-1_all.deb')
+			os.system('apt -f install')
+			os.system('dpkg -i metasploit_5.0.65-1_all.deb')
+			os.system('clear')
+			os.system('rm -rf metasploit_5.0.65-1_all.deb')
+			os.system('clear')
+			if os.path.exists('/data/data/com.termux/files/usr/bin/msfconsole'):
+				print('Done Metasploit is installed sucessfully ....')
+				print('')
+				print('Restart LEW to Continue ...')
+				print('')
+				exit()
+			else:
+				print('')
+				print('Sorry Somthing Error Has occur please try agan ...')
+				exit()
+		else:
+			print('Sorry Without Metasploit You can not run this tool .. ')
+			exit()
+	
+if version == 'android':
+	if not os.path.exists('/data/data/com.termux/files/user/bin/msfconsole'):
+		os.system('clear')
+		print('')
+		print('Metasploit Not Found ...')
+		print('')
+		install_metasploit()
 def ruby():
 	print('')
 	print('Enter the name of victim ...')
